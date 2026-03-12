@@ -280,3 +280,11 @@
     transform: scale(1.2); /* El brillo se expande un poco más */
 
 }
+
+
+
+.main-header-bar {
+    background-color: #e60000;
+    border-bottom-color: var(--ast-border-color);
+    border-bottom-style: solid
+}
