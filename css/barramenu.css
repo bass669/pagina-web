@@ -58,7 +58,7 @@ a:hover, a:focus {
 
 
 .main-header-menu .menu-link {
-    color: #ffffff !important;
+    color: #e60000 !important;
     text-transform: uppercase;
     font-weight: bold;
 }
@@ -66,3 +66,4 @@ a:hover, a:focus {
 .main-header-menu .menu-link:hover {
     color: #e60000 !important; /* Hover rojo */
 }
+
