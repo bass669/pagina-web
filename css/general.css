@@ -1,0 +1,274 @@
+.cuerpo1{
+    background-color: #428aa6c4; 
+    place-items: center;
+    display: flex;
+}
+
+.container-fluid { 
+    background-color: #5ae6c8c7;
+    align-items: center;
+    text-align: center;
+    padding: 8px 0px;    
+    margin: 40px auto; 
+    max-width: 1080px; 
+    line-height: 1.8; 
+}
+
+.container-fluid, .container{
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    width: 100%;
+    padding-right: calc(var(--bs-gutter-x) * .5);
+    padding-left: calc(var(--bs-gutter-x) * .5);
+    margin-right: auto;
+    margin-left: auto;
+} 
+
+.seccion-texto {
+    margin-bottom: 50px; 
+}
+
+.seccion-texto h2 {
+    font-size: 2rem;
+    color: #2e004f; 
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.seccion-texto p {
+    font-size: 1.1rem;
+    color: #555; 
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* --- VARIABLES Y CONFIGURACIÓN DE COLOR --- */
+:root {
+  --electric-border-color: #dd8448; /* Color naranja principal */
+  --electric-light-color: oklch(from var(--electric-border-color) l c h);
+  --gradient-color: oklch(from var(--electric-border-color) 0.3 calc(c / 2) h / 0.4);
+  --color-neutral-900: oklch(0.185 0 0);
+}
+
+/* --- CONTENEDOR DE LA SECCIÓN --- */
+.servicios-seccion {
+    padding: 80px 10px;
+    background-color: #0d0d0d; /* Fondo oscuro indispensable para el brillo */
+    width: 100%;
+}
+
+.servicios-grid {
+    display: grid;
+    /* Crea columnas automáticas de mínimo 280px */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-items: center; /* Centra las tarjetas si hay espacio sobrante */
+}
+
+/* --- ESTRUCTURA DE LA TARJETA PEQUEÑA --- */
+.main-container-card {
+    width: 280px; 
+    height: 400px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* El filtro SVG se aplica aquí */
+.main-card.small-card {
+    width: 260px;
+    height: 360px;
+    border: 2px solid var(--electric-border-color);
+    filter: url(#turbulent-displace);
+    border-radius: 20px;
+}
+
+.card-container.small {
+    position: relative;
+    padding: 2px;
+    border-radius: 24px;
+    background: linear-gradient(-30deg, var(--gradient-color), transparent, var(--gradient-color)),
+                linear-gradient(to bottom, var(--color-neutral-900), var(--color-neutral-900));
+}
+
+/* --- CAPAS DE EFECTOS (Glow & Overlays) --- */
+.glow-layer-1, .glow-layer-2 {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    border-radius: 24px;
+    pointer-events: none;
+}
+
+.glow-layer-1 { border: 2px solid rgba(221, 132, 72, 0.6); filter: blur(1px); }
+.glow-layer-2 { border: 2px solid var(--electric-light-color); filter: blur(4px); }
+
+.background-glow {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    filter: blur(32px);
+    transform: scale(1.1);
+    opacity: 0.3;
+    z-index: -1;
+    background: linear-gradient(-30deg, var(--electric-light-color), transparent, var(--electric-border-color));
+}
+
+/* --- CONTENIDO DE TEXTO --- */
+.content-container {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    z-index: 2;
+}
+
+.content-top {
+    padding: 30px 25px 15px 25px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.content-bottom {
+    padding: 15px 25px 30px 25px;
+}
+
+.title.small-t {
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: auto;
+    margin-bottom: 5px;
+    letter-spacing: -0.5px;
+}
+
+.description {
+    font-size: 13px;
+    line-height: 1.4;
+    opacity: 0.7;
+}
+
+.scrollbar-glass {
+    font-size: 10px;
+    padding: 5px 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    width: fit-content;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.divider {
+    margin: 0;
+    border: none;
+    height: 1px;
+    background-color: white;
+    opacity: 0.15;
+    -webkit-mask-image: linear-gradient(to right, transparent, black, transparent); 
+}
+
+/* --- UTILIDAD --- */
+.svg-container {
+    width: 0;
+    height: 0;
+    position: absolute;
+}
+
+/* Contenedor de la información extra (oculto por defecto) */
+.info-extra {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(13 13 13 / 74%); /* Fondo casi opaco */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    opacity: 0; /* Invisible */
+    transition: all 0.4s ease-in-out;
+    border-radius: 20px;
+    z-index: 2;
+    text-align: center;
+}
+
+
+/* Títulos y listas dentro del hover */
+.info-extra h3 {
+    color: var(--electric-border-color);
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    transition: color 0.4s ease; /* Para que el texto también pase de naranja a azul suavemente */
+} 
+
+.info-extra ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+    margin: 0;
+}
+
+.info-extra ul li {
+    font-size: 0.9rem;
+    color: #ccc;
+    margin-bottom: 8px;
+}
+.info-extra ul p{
+    font-size: 0.8rem;
+}
+
+/* Botón de acción */
+.btn-contacto {
+    background: transparent;
+    border: 1px solid var(--electric-border-color);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-contacto:hover {
+    background: var(--electric-border-color);
+    color: #000;
+}
+
+/* ACTIVACIÓN AL PASAR EL MOUSE */
+.main-container-card:hover .info-extra {
+    opacity: 1; /* Se hace visible */
+}
+
+/* Opcional: El contenido original se desvanece un poco */
+.main-container-card:hover .content-top,
+.main-container-card:hover .content-bottom,
+.main-container-card:hover .divider {
+    filter: blur(5px);
+    opacity: 0.3;
+}
+
+/* Al pasar el mouse por la tarjeta, las variables cambian a azul */
+.main-container-card:hover {
+    --electric-border-color: #2992dc; /* Azul eléctrico */
+
+/* Escalamos un poco la tarjeta para que el efecto sea más dinámico */
+    transform: scale(1.03);
+    transition: all 0.4s ease;
+     /* ESTO ES LO IMPORTANTE: */
+    z-index: 70; /* Un número alto para que se ponga por encima de todas */
+    position: relative; /* Asegura que el z-index funcione */
+}
+
+/* Asegúrate de que los contenedores tengan transición para que el cambio de color no sea brusco */
+.main-card, .glow-layer-1, .glow-layer-2, .background-glow {
+    transition: border-color 0.4s ease, background 0.4s ease;
+}
+
+.main-container-card:hover .background-glow {
+    opacity: 0.6; /* Aumentamos un poco la intensidad del brillo azul */
+    transform: scale(1.2); /* El brillo se expande un poco más */
+}

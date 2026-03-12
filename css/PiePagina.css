@@ -1,0 +1,119 @@
+.piePagina {
+    background-color: #0d0d0d; 
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    width: 100%;
+    font-family: 'DM Sans', sans-serif;
+}
+
+.divider-footer {
+    width: 80%;
+    margin: 0 auto 30px;
+    border: none;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--electric-border-color), transparent);
+    opacity: 0.5;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+}
+
+.info-contacto p {
+    font-size: 0.9rem;
+    opacity: 0.7;
+    margin-bottom: 5px;
+}
+
+.social-title {
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: var(--electric-border-color);
+}
+
+.social-media-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-media-button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    text-decoration: none;
+}
+
+.social-media-button img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    filter: grayscale(100%) brightness(200%); 
+    transition: all 0.3s;
+}
+
+/* EFECTOS HOVER */
+.social-media-button:hover {
+    transform: translateY(-5px);
+    border-color: var(--electric-border-color);
+    box-shadow: 0 5px 15px rgba(221, 132, 72, 0.3);
+}
+
+.social-media-button:hover img {
+    filter: grayscale(0%) brightness(100%); 
+    transform: scale(1.5);
+}
+
+
+.social-media-button.insta:hover {
+    border-color: #2992dc; 
+    box-shadow: 0 5px 15px rgba(41, 146, 220, 0.4);
+}
+/* Color YouTube (Rojo vibrante) */
+.social-media-button.youtube:hover {
+    border-color: #FF0000;
+    box-shadow: 0 5px 15px rgba(255, 0, 0, 0.5);
+}
+
+.social-media-button.youtube:active {
+    transform: scale(0.9);
+}
+/* Color WhatsApp (Verde) */
+.social-media-button.wsp:hover {
+    border-color: #25D366;
+    box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+}
+
+/* Color Gmail (Rojo) */
+.social-media-button.mail:hover {
+    border-color: #EA4335;
+    box-shadow: 0 5px 15px rgba(234, 67, 53, 0.4);
+}
+
+/* Color Twitch (Morado) */
+.social-media-button.twitch:hover {
+    border-color: #9146FF;
+    box-shadow: 0 5px 15px rgba(145, 70, 255, 0.4);
+}
+
+/* Ajuste para que los iconos de Google se vean bien */
+.social-media-button img {
+    width: 28px; /* Un poco más grandes para mejor visibilidad */
+    height: 28px;
+    object-fit: contain;
+    filter: grayscale(100%) brightness(200%);
+    transition: all 0.3s ease;
+}

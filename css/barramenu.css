@@ -1,0 +1,54 @@
+/* Astra Theme Custom Styles */
+
+a {
+    color: var(--ast-global-color-0);
+}
+
+a:hover, a:focus {
+    color: var(--ast-global-color-1);
+}
+
+.ast-site-identity .site-title a {
+    color: var(--ast-global-color-2);
+}
+
+
+.astra-logo-svg {
+    width: 133px;
+}
+
+ 
+
+/* Responsive */
+@media (max-width: 921px) {
+    #ast-desktop-header { display: none; }
+    h1 { font-size: 30px; }
+    h2 { font-size: 25px; }
+    :root {
+        --wp--custom--ast-default-block-right-padding: 2em;
+        --wp--custom--ast-default-block-left-padding: 2em;
+    }
+}
+
+@media (max-width: 544px) {
+    :root {
+        --wp--custom--ast-default-block-right-padding: 1.5em;
+        --wp--custom--ast-default-block-left-padding: 1.5em;
+    }
+}
+
+/* Layout de bloques de Gutenberg */
+.entry-content[data-ast-blocks-layout] > * {
+    max-width: var(--wp--custom--ast-content-width-size);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.entry-content > .wp-block-group, 
+.entry-content > .wp-block-cover, 
+.entry-content > .wp-block-columns {
+    padding: var(--wp--custom--ast-default-block-top-padding) 
+            var(--wp--custom--ast-default-block-right-padding) 
+            var(--wp--custom--ast-default-block-bottom-padding) 
+            var(--wp--custom--ast-default-block-left-padding);
+}
