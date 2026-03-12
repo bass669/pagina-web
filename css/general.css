@@ -45,7 +45,7 @@
 
 /* --- VARIABLES Y CONFIGURACIÓN DE COLOR --- */
 :root {
-  --electric-border-color: #e60000;
+  /*--electric-border-color: #e60000;*/
   --electric-light-color: #ff3333; 
   --gradient-color: rgba(230, 0, 0, 0.4);
   --color-neutral-900: #121212;
@@ -288,3 +288,4 @@
     border-bottom-color: var(--ast-border-color);
     border-bottom-style: solid
 }
+
