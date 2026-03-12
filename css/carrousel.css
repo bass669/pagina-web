@@ -8,9 +8,8 @@ body {
     align-items: center;  
     font-family: 'DM Sans', sans-serif;
     transition: background .4s ease-in;
-    background-color: #c394f8;
-    &.blue {
-    background-color: #428aa6;}  
+    background-color: #121212; /* Fondo principal */
+    color: #ffffff; 
     margin: 0;
     padding: 0;
     /* box-sizing: border-box;     */
@@ -148,7 +147,7 @@ img {
   position: relative;
   width: 60%;
   height: 100%;
-  background-color: #2992dc;
+  background-color: #e60000;
   border-radius: 6px;
 }
 
@@ -199,7 +198,7 @@ input[type=radio] {
 .card-info h2 {
     font-size: 1.5rem;
     margin-bottom: 10px;
-    color: #2992dc; /* Color azul para resaltar */
+    color: #e60000; /* Color azul para resaltar */
 }
 
 /* Mostrar información solo cuando el mouse está encima de la tarjeta activa */
@@ -220,5 +219,6 @@ input[type=radio] {
     margin-top: 50px; /* Separación desde el header */
     margin-bottom: 30px; /* Separación hacia las fotos */
     font-size: 2.5rem;
-    color: #333; /* O el color que prefieras */
+    color: #e60000;
+
 }
