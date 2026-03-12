@@ -1,11 +1,12 @@
-.cuerpo1{
-    background-color: #428aa6c4; 
+.cuerpo1 {
+    background-color: #1a1a1a; 
     place-items: center;
     display: flex;
 }
 
 .container-fluid { 
-    background-color: #5ae6c8c7;
+    background-color: #1e1e1e; /* bg-card */
+    color: white;
     align-items: center;
     text-align: center;
     padding: 8px 0px;    
@@ -30,30 +31,30 @@
 
 .seccion-texto h2 {
     font-size: 2rem;
-    color: #2e004f; 
+    color: #e60000; /* Títulos en rojo */
     margin-bottom: 15px;
     font-weight: 700;
 }
 
 .seccion-texto p {
     font-size: 1.1rem;
-    color: #555; 
+    color: #aaaaaa; /* text-muted */
     max-width: 800px;
     margin: 0 auto;
 }
 
 /* --- VARIABLES Y CONFIGURACIÓN DE COLOR --- */
 :root {
-  --electric-border-color: #dd8448; /* Color naranja principal */
-  --electric-light-color: oklch(from var(--electric-border-color) l c h);
-  --gradient-color: oklch(from var(--electric-border-color) 0.3 calc(c / 2) h / 0.4);
-  --color-neutral-900: oklch(0.185 0 0);
+  --electric-border-color: #e60000;
+  --electric-light-color: #ff3333; 
+  --gradient-color: rgba(230, 0, 0, 0.4);
+  --color-neutral-900: #121212;
 }
 
 /* --- CONTENEDOR DE LA SECCIÓN --- */
 .servicios-seccion {
     padding: 80px 10px;
-    background-color: #0d0d0d; /* Fondo oscuro indispensable para el brillo */
+    background-color: #121212; /* bg-dark */
     width: 100%;
 }
 
@@ -243,6 +244,12 @@
     opacity: 1; /* Se hace visible */
 }
 
+
+.main-container-card:hover {
+    --electric-border-color: #ffffff; /* Brillo blanco al pasar el mouse */
+    transform: scale(1.03);
+
+    
 /* Opcional: El contenido original se desvanece un poco */
 .main-container-card:hover .content-top,
 .main-container-card:hover .content-bottom,
@@ -271,4 +278,5 @@
 .main-container-card:hover .background-glow {
     opacity: 0.6; /* Aumentamos un poco la intensidad del brillo azul */
     transform: scale(1.2); /* El brillo se expande un poco más */
+
 }
