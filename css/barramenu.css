@@ -67,3 +67,7 @@ a:hover, a:focus {
     color: #e60000 !important; /* Hover rojo */
 }
 
+.main-header-bar {
+    background-color: #121212 !important; /* Cambia el rojo por el fondo oscuro */
+    border-bottom: 2px solid #e60000 !important; /* Borde rojo siguiendo tu nuevo estilo */
+}
