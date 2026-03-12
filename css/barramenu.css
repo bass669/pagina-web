@@ -22,6 +22,8 @@ a:hover, a:focus {
 /* Responsive */
 @media (max-width: 921px) {
     #ast-desktop-header { display: none; }
+    background-color: #000000 !important;
+    border-bottom: 2px solid #e60000 !important; /* Borde rojo */
     h1 { font-size: 30px; }
     h2 { font-size: 25px; }
     :root {
@@ -51,4 +53,16 @@ a:hover, a:focus {
             var(--wp--custom--ast-default-block-right-padding) 
             var(--wp--custom--ast-default-block-bottom-padding) 
             var(--wp--custom--ast-default-block-left-padding);
+
+}
+
+
+.main-header-menu .menu-link {
+    color: #ffffff !important;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.main-header-menu .menu-link:hover {
+    color: #e60000 !important; /* Hover rojo */
 }
