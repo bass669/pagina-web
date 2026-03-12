@@ -1,5 +1,5 @@
 .piePagina {
-    background-color: #0d0d0d; 
+    background-color: #000000;
     color: white;
     padding: 40px 20px;
     text-align: center;
@@ -12,7 +12,7 @@
     margin: 0 auto 30px;
     border: none;
     height: 1px;
-    background: linear-gradient(to right, transparent, var(--electric-border-color), transparent);
+    background: linear-gradient(to right, transparent, #e60000, transparent);
     opacity: 0.5;
 }
 
@@ -34,7 +34,7 @@
     letter-spacing: 2px;
     font-weight: bold;
     margin-bottom: 15px;
-    color: var(--electric-border-color);
+    color: #e60000;
 }
 
 .social-media-buttons {
@@ -68,7 +68,7 @@
 /* EFECTOS HOVER */
 .social-media-button:hover {
     transform: translateY(-5px);
-    border-color: var(--electric-border-color);
+    border-color: #e60000;
     box-shadow: 0 5px 15px rgba(221, 132, 72, 0.3);
 }
 
@@ -117,3 +117,4 @@
     filter: grayscale(100%) brightness(200%);
     transition: all 0.3s ease;
 }
+
