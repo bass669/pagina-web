@@ -257,8 +257,8 @@
 }
 
 /* Al pasar el mouse por la tarjeta, las variables cambian a azul */
-.main-container-card:hover {
-    --electric-border-color: #2992dc; /* Azul eléctrico */
+/* .main-container-card:hover {
+    --electric-border-color: #2992dc; /* Azul eléctrico */ 
 
 /* Escalamos un poco la tarjeta para que el efecto sea más dinámico */
     transform: scale(1.03);
@@ -286,6 +286,7 @@
     border-bottom-color: var(--ast-border-color);
     border-bottom-style: solid
 }
+
 
 
 
