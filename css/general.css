@@ -242,10 +242,10 @@
     opacity: 1; /* Se hace visible */
 }
 
-
-.main-container-card:hover {
-    --electric-border-color: #ffffff; /* Brillo blanco al pasar el mouse */
-    transform: scale(1.03);
+/* Brillo blanco al pasar el mouse */
+/* .main-container-card:hover {
+    --electric-border-color: #ffffff; 
+    transform: scale(1.03); */
 
     
 /* Opcional: El contenido original se desvanece un poco */
