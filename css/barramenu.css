@@ -17,6 +17,24 @@ a:hover, a:focus {
     width: 133px;
 }
 
+/* Estilos personalizados para la nueva navbar de Bootstrap */
+.custom-nav-link {
+    color: #ffffff !important;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.custom-nav-link:hover, .custom-nav-link:focus {
+    color: #e60000 !important; /* Rojo vibrante al pasar el ratón */
+}
+
+/* Efecto suave en la navbar al abrirse en celular */
+.navbar-collapse {
+    transition: all 0.3s ease-in-out;
+}
+
  
 
 /* Responsive */
