@@ -1,12 +1,12 @@
 .cuerpo1 {
-    background-color: #1a1a1a; 
+    background-color: #1a1a1a; /* Fondo oscuro */
     place-items: center;
     display: flex;
 }
 
 .container-fluid { 
-    background-color: #1e1e1e; /* bg-card */
-    color: white;
+    background-color: #1e1e1e; /* Fondo de tarjeta oscura */
+    color: #ffffff;
     align-items: center;
     text-align: center;
     padding: 8px 0px;    
@@ -15,7 +15,7 @@
     line-height: 1.8; 
 }
 
-.container-fluid, .container{
+.container-fluid, .container {
     --bs-gutter-x: 1.5rem;
     --bs-gutter-y: 0;
     width: 100%;
@@ -29,41 +29,42 @@
     margin-bottom: 50px; 
 }
 
-.seccion-texto h2 {
+.seccion-texto h2, .seccion-texto h3 {
     font-size: 2rem;
-    color: #e60000; /* Títulos en rojo */
+    color: #e60000; /* Títulos en rojo vibrante */
     margin-bottom: 15px;
     font-weight: 700;
 }
 
 .seccion-texto p {
     font-size: 1.1rem;
-    color: #aaaaaa; /* text-muted */
+    color: #aaaaaa; /* Texto silenciado/gris claro */
     max-width: 800px;
     margin: 0 auto;
 }
 
 /* --- VARIABLES Y CONFIGURACIÓN DE COLOR --- */
 :root {
+  /* --electric-border-color: #e60000; Color rojo vibrante principal */
+  --electric-light-color: #ff3333; /* Rojo claro para el brillo */
   --gradient-color: rgba(230, 0, 0, 0.4);
-  --color-neutral-900: #121212;
+  --color-neutral-900: #121212; /* Fondo muy oscuro */
 }
 
 /* --- CONTENEDOR DE LA SECCIÓN --- */
 .servicios-seccion {
     padding: 80px 10px;
-    background-color: #121212; /* bg-dark */
+    background-color: #121212; /* Fondo oscuro principal */
     width: 100%;
 }
 
 .servicios-grid {
     display: grid;
-    /* Crea columnas automáticas de mínimo 280px */
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
     gap: 10px;
     max-width: 1200px;
     margin: 0 auto;
-    justify-items: center; /* Centra las tarjetas si hay espacio sobrante */
+    justify-items: center; 
 }
 
 /* --- ESTRUCTURA DE LA TARJETA PEQUEÑA --- */
@@ -76,7 +77,6 @@
     justify-content: center;
 }
 
-/* El filtro SVG se aplica aquí */
 .main-card.small-card {
     width: 260px;
     height: 360px;
@@ -101,7 +101,7 @@
     pointer-events: none;
 }
 
-.glow-layer-1 { border: 2px solid rgba(221, 132, 72, 0.6); filter: blur(1px); }
+.glow-layer-1 { border: 2px solid rgba(230, 0, 0, 0.6); filter: blur(1px); }
 .glow-layer-2 { border: 2px solid var(--electric-light-color); filter: blur(4px); }
 
 .background-glow {
@@ -176,33 +176,31 @@
     position: absolute;
 }
 
-/* Contenedor de la información extra (oculto por defecto) */
+/* Contenedor de la información extra */
 .info-extra {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgb(13 13 13 / 74%); /* Fondo casi opaco */
+    background: rgba(18, 18, 18, 0.85); /* Fondo oscuro translúcido */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 20px;
-    opacity: 0; /* Invisible */
+    opacity: 0; 
     transition: all 0.4s ease-in-out;
     border-radius: 20px;
     z-index: 2;
     text-align: center;
 }
 
-
-/* Títulos y listas dentro del hover */
 .info-extra h3 {
     color: var(--electric-border-color);
     margin-bottom: 15px;
     font-size: 1.2rem;
-    transition: color 0.4s ease; /* Para que el texto también pase de naranja a azul suavemente */
+    transition: color 0.4s ease; 
 } 
 
 .info-extra ul {
@@ -214,11 +212,13 @@
 
 .info-extra ul li {
     font-size: 0.9rem;
-    color: #ccc;
+    color: #cccccc;
     margin-bottom: 8px;
 }
-.info-extra ul p{
+
+.info-extra ul p {
     font-size: 0.8rem;
+    color: #aaaaaa;
 }
 
 /* Botón de acción */
@@ -234,21 +234,14 @@
 
 .btn-contacto:hover {
     background: var(--electric-border-color);
-    color: #000;
+    color: #ffffff;
 }
 
 /* ACTIVACIÓN AL PASAR EL MOUSE */
 .main-container-card:hover .info-extra {
-    opacity: 1; /* Se hace visible */
+    opacity: 1; 
 }
 
-/* Brillo blanco al pasar el mouse */
-/* .main-container-card:hover {
-    --electric-border-color: #ffffff; 
-    transform: scale(1.03); */
-
-    
-/* Opcional: El contenido original se desvanece un poco */
 .main-container-card:hover .content-top,
 .main-container-card:hover .content-bottom,
 .main-container-card:hover .divider {
@@ -256,37 +249,19 @@
     opacity: 0.3;
 }
 
-/* Al pasar el mouse por la tarjeta, las variables cambian a azul */
-/* .main-container-card:hover {
-    --electric-border-color: #2992dc; /* Azul eléctrico */ 
-
-/* Escalamos un poco la tarjeta para que el efecto sea más dinámico */
+.main-container-card:hover {
+    /* --electric-border-color: #ffffff; Al hacer hover, el borde se vuelve blanco */
     transform: scale(1.03);
     transition: all 0.4s ease;
-     /* ESTO ES LO IMPORTANTE: */
-    z-index: 70; /* Un número alto para que se ponga por encima de todas */
-    position: relative; /* Asegura que el z-index funcione */
+    z-index: 70; 
+    position: relative; 
 }
 
-/* Asegúrate de que los contenedores tengan transición para que el cambio de color no sea brusco */
 .main-card, .glow-layer-1, .glow-layer-2, .background-glow {
     transition: border-color 0.4s ease, background 0.4s ease;
 }
 
 .main-container-card:hover .background-glow {
-    opacity: 0.6; /* Aumentamos un poco la intensidad del brillo azul */
-    transform: scale(1.2); /* El brillo se expande un poco más */
-
+    opacity: 0.6; 
+    transform: scale(1.2); 
 }
-
-
-
-.main-header-bar {
-    background-color: #e60000;
-    border-bottom-color: var(--ast-border-color);
-    border-bottom-style: solid
-}
-
-
-
-
