@@ -1,3 +1,47 @@
+/* Cabecera / Hero Section */
+header {
+    background: linear-gradient(135deg, #000000 0%, #2a0000 100%);
+    padding: 5rem 2rem;
+    text-align: center;
+    border-bottom: 4px solid var(--primary-color);
+}
+
+header h1 {
+    color: #cc0000;
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+header p {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    max-width: 800px;
+    margin: 0 auto 2rem auto;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--primary-color);
+    color: #fff;
+    padding: 10px 25px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    text-transform: uppercase;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background: #cc0000;
+    text-decoration: none;
+}
+
+/* Secciones Comunes */
+section {
+    padding: 4rem 0;
+}
+
 .cuerpo1 {
     background-color: #1a1a1a; /* Fondo oscuro */
     place-items: center;
