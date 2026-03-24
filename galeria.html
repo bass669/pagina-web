@@ -67,32 +67,56 @@
     </nav>
 
     <main class="galeria-container">
-        <h1 id="TitleCarousel">Nuestra Galería de Eventos</h1>
+        <h1 id="TitleCarousel" style="margin-left: 120px;" >Galería de Eventos </h1>
         <br>
         <div class="container">
-            <div class="row">
-                
-                <div class="col-lg-4 col-md-6">
-                    <div class="galeria-item">
-                        <img src="img/Captura de pantalla 2026-03-06 170046.png" alt="Evento Expogame">
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6">
-                    <div class="galeria-item">
-                        <img src="img/Captura de pantalla 2026-03-06 171429.png" alt="Evento Onico">
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6">
-                    <div class="galeria-item">
-                        <img src="img/Captura de pantalla 2026-03-06 171442.png" alt="Evento Daynight">
-                    </div>
-                </div>
-
+            <div class="row" id="contenedor-galeria">
                 </div>
         </div>
     </main>
+
+   <script>
+    // Contenedor donde van las fotos
+    const contenedor = document.getElementById('contenedor-galeria');
+
+    // Función que cargar las imágenes una por una
+    function cargarImagen(numero) {
+        // Crea una imagen "invisible" en memoria para probar si existe
+        const imgPrueba = new Image();
+        
+        // SÍ existe
+        imgPrueba.onload = function() {
+            // Crear la estructura HTML
+            const divCol = document.createElement('div');
+            divCol.className = 'col-lg-4 col-md-6';
+            
+            divCol.innerHTML = `
+                <div class="galeria-item">
+                    <img src="img/galeria/${numero}.png" alt="Evento Pro Hardware">
+                </div>
+            `;
+            
+            // Se inyecta en la página
+            contenedor.appendChild(divCol);
+            
+            // Cargar el número siguiente
+            cargarImagen(numero + 1);
+        };
+
+        // Si la imagen NO existe (llegamos al final)
+        imgPrueba.onerror = function() {
+            // Aquí el script simplemente se detiene, ya no busca más.
+            console.log("Carga de galería terminada. Total de fotos: " + (numero - 1));
+        };
+
+        // Al asignarle la ruta, disparamos el intento de carga (onload o onerror)
+        // Asegúrate de que todas tus fotos sean .png (o cambia la extensión aquí si usas .jpg)
+        imgPrueba.src = `img/galeria/${numero}.png`;
+    }
+
+    // Iniciamos el ciclo buscando la foto número 1
+    cargarImagen(1);
+</script>
 
     <footer class="piePagina" id="contactanos">
         <hr class="divider-footer">
