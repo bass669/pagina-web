@@ -125,7 +125,7 @@ section {
     width: 260px;
     height: 360px;
     border: 2px solid var(--electric-border-color);
-    filter: url(#turbulent-displace);
+    /* filter: url(#turbulent-displace); */
     border-radius: 20px;
 }
 
