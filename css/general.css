@@ -1,3 +1,11 @@
+.cuerpo1 {
+    background-color: #1a1a1a; /* Fondo oscuro */
+    place-items: center;
+    display: flex;
+}
+
+
+
 /* Cabecera / Hero Section */
 header {
     background: linear-gradient(135deg, #000000 0%, #2a0000 100%);
@@ -23,13 +31,14 @@ header p {
 .btn {
     display: inline-block;
     background: var(--primary-color);
-    color: #fff;
+    background: #121212;
+    color: #ffffff;
     padding: 10px 25px;
     font-size: 1.1rem;
     font-weight: bold;
     border-radius: 5px;
     text-transform: uppercase;
-    transition: background 0.3s ease;
+    transition: background-color 0.3s ease; /* Suaviza el cambio */
 }
 
 .btn:hover {
@@ -42,11 +51,6 @@ section {
     padding: 4rem 0;
 }
 
-.cuerpo1 {
-    background-color: #1a1a1a; /* Fondo oscuro */
-    place-items: center;
-    display: flex;
-}
 
 .container-fluid { 
     background-color: #1e1e1e; /* Fondo de tarjeta oscura */
@@ -210,7 +214,7 @@ section {
     height: 1px;
     background-color: white;
     opacity: 0.15;
-    -webkit-mask-image: linear-gradient(to right, transparent, black, transparent); 
+    /* -webkit-mask-image: linear-gradient(to right, transparent, black, transparent);  */
 }
 
 /* --- UTILIDAD --- */
@@ -276,9 +280,10 @@ section {
     transition: 0.3s;
 }
 
-.btn-contacto:hover {
-    background: var(--electric-border-color);
-    color: #ffffff;
+/* botones de cotizar en servicios */
+.btn-contacto:hover { 
+    background: #e60000; /* fondo del boton al pasar el mouse */
+    color: #ffffff
 }
 
 /* ACTIVACIÓN AL PASAR EL MOUSE */
@@ -309,3 +314,37 @@ section {
     opacity: 0.6; 
     transform: scale(1.2); 
 }
+
+
+        /* Estilos exclusivos para la cuadrícula de la galería */
+        body {
+            background-color: #121212; /* Mantiene el fondo oscuro */
+        }
+        .galeria-container {
+            padding: 4rem 0;
+            min-height: 70vh;
+        }
+        .galeria-item {
+            margin-bottom: 30px;
+            overflow: hidden;
+            border-radius: 15px;
+            border: 2px solid #e60000;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            position: relative;
+        }
+        .galeria-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(230, 0, 0, 0.5); /* Resplandor rojo al pasar el mouse */
+            z-index: 2;
+        }
+        .galeria-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+            transition: filter 0.4s ease;
+        }
+        .galeria-item:hover img {
+            filter: brightness(1.2);
+        }
