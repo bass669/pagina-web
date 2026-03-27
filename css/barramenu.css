@@ -24,6 +24,7 @@ a:hover, a:focus {
     font-weight: bold;
     font-size: 1.1rem;
     transition: color 0.3s ease;
+    font-family: "Josefin Sans", sans-serif;
 }
 
 .custom-nav-link:hover, .custom-nav-link:focus {

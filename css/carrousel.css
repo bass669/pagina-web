@@ -112,6 +112,7 @@ img {
   color: #403d40;
   font-size: 14px;
   line-height: 24px;
+  font-family: "Josefin Sans", sans-serif;
 }
 
 .sub-line {
@@ -196,9 +197,16 @@ input[type=radio] {
 }
 
 .card-info h2 {
+    font-family: "Josefin Sans", sans-serif;
     font-size: 1.5rem;
     margin-bottom: 10px;
     color: #e60000; /* Color azul para resaltar */
+}
+.card-info p {
+    font-family: "Open Sans", sans-serif;
+}
+.card-info span {
+    font-family: "Open Sans", sans-serif;
 }
 
 /* Mostrar información solo cuando el mouse está encima de la tarjeta activa */
