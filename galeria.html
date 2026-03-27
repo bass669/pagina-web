@@ -43,58 +43,14 @@
         </div>
     </main>
 
-   <!-- <script>
-    // Contenedor donde van las fotos
-    const contenedor = document.getElementById('contenedor-galeria');
-
-    // Función que cargar las imágenes una por una
-    function cargarImagen(numero) {
-        // Crea una imagen "invisible" en memoria para probar si existe
-        const imgPrueba = new Image();
-        
-        // SÍ existe
-        imgPrueba.onload = function() {
-            // Crear la estructura HTML
-            const divCol = document.createElement('div');
-            divCol.className = 'col-lg-4 col-md-6';
-            
-            divCol.innerHTML = `
-                <div class="galeria-item">
-                    <img src="img/galeria/${numero}.png" alt="Evento Pro Hardware">
-                </div>
-            `;
-            
-            // Se inyecta en la página
-            contenedor.appendChild(divCol);
-            
-            // Cargar el número siguiente
-            cargarImagen(numero + 1);
-        };
-
-        // Si la imagen NO existe (llegamos al final)
-        imgPrueba.onerror = function() {
-            // Aquí el script simplemente se detiene, ya no busca más.
-            console.log("Carga de galería terminada. Total de fotos: " + (numero - 1));
-        };
-
-        // Al asignarle la ruta, disparamos el intento de carga (onload o onerror)
-        // Asegúrate de que todas tus fotos sean .png (o cambia la extensión aquí si usas .jpg)
-        imgPrueba.src = `img/galeria/${numero}.png`;
-    }
-
-    // Iniciamos el ciclo buscando la foto número 1
-    cargarImagen(1);
-</script> -->
-
     <script>
     const contenedor = document.getElementById('contenedor-galeria');
     
-    // Define un límite máximo generoso (ej. 50, 100). 
-    // No te preocupes, no pondrá la página lenta intentar buscar 50 fotos.
+    // Define un límite máximo no pondrá la página lenta intentar buscar muchas fotos
     const MAX_FOTOS_ESTIMADAS = 500; 
 
     for (let numero = 1; numero <= MAX_FOTOS_ESTIMADAS; numero++) {
-        // 1. Creamos un "contenedor fantasma" para mantener el orden estricto (1, 2, 3...)
+        // Creamos un "contenedor fantasma" para mantener el orden estricto (1, 2, 3...)
         const divCol = document.createElement('div');
         divCol.className = 'col-lg-4 col-md-6';
         divCol.style.display = 'none'; // Se mantiene oculto
@@ -102,11 +58,11 @@
         // Lo inyectamos inmediatamente en la página reservando su espacio
         contenedor.appendChild(divCol);
 
-        // 2. Intentamos cargar la foto en memoria (todas se lanzan al mismo tiempo)
+        // Intentamos cargar la foto en memoria (todas se lanzan al mismo tiempo)
         const imgPrueba = new Image();
         imgPrueba.src = `img/galeria/${numero}.png`;
 
-        // 3. ¿Qué pasa si la foto SÍ existe y termina de cargar?
+        // ¿Qué pasa si la foto SÍ existe y termina de cargar?
         imgPrueba.onload = function() {
             // Rellenamos su contenedor fantasma específico y lo hacemos visible
             divCol.innerHTML = `
@@ -117,14 +73,13 @@
             divCol.style.display = 'block';
         };
 
-        // 4. ¿Qué pasa si la foto NO existe?
+        // si la foto NO existe
         imgPrueba.onerror = function() {
             // Destruimos el contenedor fantasma para no dejar espacios en blanco
             divCol.remove();
         };
     }
 </script>
-
 
     <footer class="piePagina" id="contactanos">
         <hr class="divider-footer">
