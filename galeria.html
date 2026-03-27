@@ -43,7 +43,7 @@
         </div>
     </main>
 
-   <script>
+   <!-- <script>
     // Contenedor donde van las fotos
     const contenedor = document.getElementById('contenedor-galeria');
 
@@ -84,7 +84,47 @@
 
     // Iniciamos el ciclo buscando la foto número 1
     cargarImagen(1);
+</script> -->
+
+    <script>
+    const contenedor = document.getElementById('contenedor-galeria');
+    
+    // Define un límite máximo generoso (ej. 50, 100). 
+    // No te preocupes, no pondrá la página lenta intentar buscar 50 fotos.
+    const MAX_FOTOS_ESTIMADAS = 50; 
+
+    for (let numero = 1; numero <= MAX_FOTOS_ESTIMADAS; numero++) {
+        // 1. Creamos un "contenedor fantasma" para mantener el orden estricto (1, 2, 3...)
+        const divCol = document.createElement('div');
+        divCol.className = 'col-lg-4 col-md-6';
+        divCol.style.display = 'none'; // Se mantiene oculto
+        
+        // Lo inyectamos inmediatamente en la página reservando su espacio
+        contenedor.appendChild(divCol);
+
+        // 2. Intentamos cargar la foto en memoria (todas se lanzan al mismo tiempo)
+        const imgPrueba = new Image();
+        imgPrueba.src = `img/galeria/${numero}.png`;
+
+        // 3. ¿Qué pasa si la foto SÍ existe y termina de cargar?
+        imgPrueba.onload = function() {
+            // Rellenamos su contenedor fantasma específico y lo hacemos visible
+            divCol.innerHTML = `
+                <div class="galeria-item">
+                    <img src="${this.src}" alt="Evento Pro Hardware">
+                </div>
+            `;
+            divCol.style.display = 'block';
+        };
+
+        // 4. ¿Qué pasa si la foto NO existe?
+        imgPrueba.onerror = function() {
+            // Destruimos el contenedor fantasma para no dejar espacios en blanco
+            divCol.remove();
+        };
+    }
 </script>
+
 
     <footer class="piePagina" id="contactanos">
         <hr class="divider-footer">
