@@ -212,6 +212,7 @@ section {
     width: fit-content;
     text-transform: uppercase;
     font-weight: bold;
+    font-family: "Lato", sans-serif;
 }
 
 .divider {
@@ -263,6 +264,7 @@ section {
     padding: 0;
     margin-bottom: 20px;
     margin: 0;
+    font-family: "Open Sans", sans-serif;
 }
 
 .info-extra ul li {
@@ -274,6 +276,7 @@ section {
 .info-extra ul p {
     font-size: 0.8rem;
     color: #aaaaaa;
+    font-family: "Open Sans", sans-serif;
 }
 
 /* Botón de acción */
