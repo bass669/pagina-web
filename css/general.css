@@ -41,6 +41,7 @@ header p {
     border-radius: 5px;
     text-transform: uppercase;
     transition: background-color 0.3s ease; /* Suaviza el cambio */
+    font-family: "Lato", sans-serif;
 }
 
 .btn:hover {
@@ -289,12 +290,14 @@ section {
     border-radius: 5px;
     cursor: pointer;
     transition: 0.3s;
+    font-family: "Lato", sans-serif;
 }
 
 /* botones de cotizar en servicios */
 .btn-contacto:hover { 
     background: #e60000; /* fondo del boton al pasar el mouse */
-    color: #ffffff
+    color: #ffffff;
+    font-family: "Lato", sans-serif;
 }
 
 /* ACTIVACIÓN AL PASAR EL MOUSE */
