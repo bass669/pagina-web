@@ -25,13 +25,13 @@ document.addEventListener("DOMContentLoaded", function() {
         // Pausar con el mouse entra
         sliderContainer.addEventListener('mouseenter', () => {
             autoPlay = false;
-            console.log("Carrusel pausado"); 
+            console.log("pausado"); 
         });
         
         // Reanudar con el mouse sale
         sliderContainer.addEventListener('mouseleave', () => {
             autoPlay = true;
-            console.log("Carrusel reanudado");
+            console.log("reanudado");
         });
 
     }
