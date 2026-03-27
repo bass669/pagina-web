@@ -84,6 +84,7 @@ section {
     color: #e60000; /* Títulos en rojo vibrante */
     margin-bottom: 15px;
     font-weight: 700;
+    font-family: "Josefin Sans", sans-serif;
 }
 
 .seccion-texto p {
