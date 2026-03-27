@@ -228,5 +228,5 @@ input[type=radio] {
     margin-bottom: 30px; /* Separación hacia las fotos */
     font-size: 2.5rem;
     color: #e60000;
-
+    font-family: "Josefin Sans", sans-serif;
 }
