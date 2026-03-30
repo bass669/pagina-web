@@ -1,0 +1,81 @@
+body {
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* background: linear-gradient(135deg, #2a0000 0%, #000000 50%, #2a0000 100%); */
+    background: radial-gradient(circle, #000000 0%, #2a0000 100%);
+}
+
+.btn {
+    padding: 8px 20px;
+    border-radius: 25px;
+    overflow: hidden;
+}
+
+.btn::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, #00fffc,
+            transparent);
+    transform: translateX(-200%);
+    transition: 0.5;
+}
+
+.btn:hover {
+    background: transparent;
+    box-shadow: 0 0 20px 10px rgba(23, 202, 229, 0.5);
+}
+
+.form-input-material {
+    --input-default-border-color: white;
+    --input-border-butoom-color: white;
+}
+
+.form-input-material input {
+    color: rgb(0, 0, 0);
+}
+
+.container {
+    max-width: 900px;
+    backdrop-filter: blur(10px);
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 30px;
+    color: white;
+    box-shadow: 0 0.8px 0.8px rgba(255, 255, 255, 0.5),
+        0 1.5px 1.5px rgba(255, 255, 255, 0.5),
+        0 2.1px 2.1px rgba(255, 255, 255, 0.5),
+        0 4.4px 4.4px rgba(255, 255, 255, 0.5),
+        0 12px 12px rgba(10, 8, 8, 0.5);
+    border-radius: 15px;
+}
+
+.container h3 {
+    margin: 0 0 24px 0;
+    text-align: center;
+}
+
+.container .form-input-material {
+    margin: 12px 35px;
+}
+
+.container .btn {
+    width: 30%;
+    margin: 18px 0 9px 35%;
+}
+
+h2 {
+    color: white;
+    text-align: center;
+    font-family: "Josefin Sans", sans-serif;
+}
+h3{
+    font-family: "Josefin Sans", sans-serif;
+}
+label{
+    font-family: "Open Sans", sans-serif;
+}
