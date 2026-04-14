@@ -80,6 +80,6 @@ label{
     font-family: "Open Sans", sans-serif;
 }
 
-row{
+.row{
     justify-content: space-around;
 }
