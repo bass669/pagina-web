@@ -51,31 +51,31 @@
                                 <label for="Name"class="form-label">Nombre</label>
                                 <input type="text" class="form-control" name="Name" id="Name" placeholder="Ingrese Nombre" autocomplete="off" required />
                             </div>
-                            <div class="form-group col-md-6">
-                                <label for="LastName"class="form-label">Apellidos</label>
-                                <input type="text" class="form-control" name="LastName" id="LastName" placeholder="Ingrese Apellidos" autocomplete="off" />
+                            <div class="form-group col-md-5">
+                                <label for="Email" class="form-label">Correo</label>
+                                <input type="email" class="form-control" name="Email" id="Email" 
+                                    placeholder="name@example.com" autocomplete="off" required />
                             </div>
                         </div>
                     </div>
                     <!--Fila 2-->
                     <div class="form-input-material">
                         <div class="row">
-                            <div class="form-group col-md-6">
-                                <label for="Email" class="form-label">Correo</label>
-                                <input type="email" class="form-control" name="Email" id="Email" 
-                                placeholder="name@example.com" autocomplete="off" required />
-                            </div>
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-md-5">
                                 <label for="Fono" class="form-label">Numero Telefono</label>
                                 <input type="text" class="form-control" name="Fono" id="Fono" 
                                 placeholder="Ingrese Numero Telefonico" autocomplete="off" />
+                            </div>
+                            <div class="form-group col-md-5">
+                                <label for="Ciudad"class="form-label">Ciudad/Ubicación</label>
+                                <input type="text" class="form-control" name="Ciudad" id="Ciudad" placeholder="Concepción, Santiago, etc" autocomplete="off" required />
                             </div>
                         </div>
                     </div>
                     <!--Fila 3-->
                     <div class="form-input-material">
                         <label for="servicio" class="form-label">Eliga Servico de Interes</label>
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-5">
                             <select class="form-select" aria-label="Default select example"
                                 id="servicio" name="Servicio" required>
                                 <option selected>Servicio de Interes</option>
@@ -89,11 +89,16 @@
                                 <option value="8">Eigh</option>
                             </select>
                         </div>
+                        <div class="form-group col-md-5">
+                            <label for="Ciudad"class="form-label">Fecha del Evento</label>
+                            <input type="date" class="form-control" name="fechaevento" id="fechaevento" placeholder="dd/mm/aa" autocomplete="off" required >
+                        </div>
+                        
                         <br>
                         <label for="Motivo" class="form-label">Motivo del contacto</label>
                         <div class="form-group col-md-10">
                             <textarea class="form-control" name="Mensaje" id="detalle" rows="6"
-                                placeholder="Detalle motivo" required></textarea>
+                                placeholder="Cuéntanos qué necesitas, cantidad de equipos, tipo de evento y cualquier referencia útil." required></textarea>
                         </div>
                     </div>
                     <button type="submit" id="button" class="btn btn-outline-primary btn-ghost">Enviar</button>
