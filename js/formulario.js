@@ -42,3 +42,19 @@
                 btn.disabled = false;
             });
     });
+
+    document.addEventListener("DOMContentLoaded", function() {
+    // 1. Obtener los parámetros de la URL
+    const urlParams = new URLSearchParams(window.location.search);
+    
+    // 2. Extraer el valor de "servicio"
+    const servicioSeleccionado = urlParams.get('servicio');
+    
+    // 3. Si existe un servicio en la URL, seleccionarlo en el dropdown
+    if (servicioSeleccionado) {
+        const selectElement = document.getElementById('servicio');
+        if (selectElement) {
+            selectElement.value = servicioSeleccionado;
+        }
+    }
+});
