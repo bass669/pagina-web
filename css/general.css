@@ -613,16 +613,6 @@ section {
   text-transform: uppercase;
 }
 
-.hero-copy h1 {
-  line-height: 1.05;
-  text-transform: uppercase;
-  letter-spacing: -0.03em;
-  font-size: clamp(2.8rem, 7vw, 5.6rem);
-  margin-top: 20px;
-  max-width: 760px;
-  color: #ffffff; /* Asegura el color en caso de que tu body no lo tenga */
-}
-
 .hero-copy h1 span {
   color: #ff3838; /* Acento rojo de la marca */
   display: block;
