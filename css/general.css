@@ -424,6 +424,7 @@ section {
     font-size: clamp(2.2rem, 5vw, 3.1rem); /* Escala más pequeña */
     max-width: 760px;
     margin: 0;
+    color: #ffffff;
   }
 
   .hero-copy h1 span {
