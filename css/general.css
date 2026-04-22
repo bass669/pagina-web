@@ -9,7 +9,7 @@
 /* Cabecera / Hero Section */
 header {
     background: linear-gradient(135deg, #000000 0%, #2a0000 100%);
-    padding: 5rem 2rem;
+    padding:1rem 1rem;
     text-align: center;
     border-bottom: 4px solid var(--primary-color);
 }
@@ -362,3 +362,367 @@ section {
         .galeria-item:hover img {
             filter: brightness(1.2);
         }
+
+/* =========================================
+   ESTILOS DEL HERO COPY (Pro Hardware)
+   ========================================= */
+
+    :root {
+    --bg-panel: rgba(255, 255, 255, 0.05);
+    --line-color: rgba(255, 255, 255, 0.08);
+    --text-color-soft: rgba(255, 255, 255, 0.78);
+    --brand-red-accent: #ff3838;
+    --brand-red-main: #dc2626;
+    --border-radius-lg: 24px; /* Un poco menos curvo para encajar mejor */
+    --font-family-main: Arial, Helvetica, sans-serif;
+  }
+
+  .hero-container {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr; 
+    gap: 20px; /* Reducido de 28px */
+    align-items: stretch;
+    font-family: var(--font-family-main);
+    color: #ffffff;
+    margin-top: 24px; /* Reducido de 42px */
+  }
+
+  /* --- Bloque de Texto --- */
+  .hero-copy {
+    border: 1px solid var(--line-color);
+    border-radius: var(--border-radius-lg);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.24);
+    padding: 28px; /* Reducido de 34px */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 480px; /* Reducido de 560px */
+    background: linear-gradient(135deg, rgba(177, 18, 23, 0.12), rgba(255, 255, 255, 0.03));
+  }
+
+  .hero-copy .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    padding: 8px 12px; /* Reducido */
+    border-radius: 999px;
+    background: rgba(220, 38, 38, 0.12);
+    border: 1px solid rgba(220, 38, 38, 0.24);
+    color: #fecaca;
+    font-size: 0.68rem; /* Reducido */
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 14px; /* Reducido */
+  }
+
+  .hero-copy h1 {
+    line-height: 1.05;
+    text-transform: uppercase;
+    letter-spacing: -0.03em;
+    font-size: clamp(2.2rem, 5vw, 3.1rem); /* Escala más pequeña */
+    max-width: 760px;
+    margin: 0;
+  }
+
+  .hero-copy h1 span {
+    color: var(--brand-red-accent);
+    display: block;
+  }
+
+  .hero-copy p {
+    margin-top: 14px; /* Reducido */
+    max-width: 680px;
+    color: var(--text-color-soft);
+    line-height: 1.6; /* Reducido de 1.8 */
+    font-size: 0.95rem; /* Reducido de 1.05rem */
+    margin-bottom: 22px; /* Reducido */
+  }
+
+  /* --- Botones --- */
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 16px; /* Reducido */
+  }
+
+  .hero-actions .btn, 
+  .hero-actions .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-size: 0.72rem; /* Reducido */
+    transition: 0.25s ease;
+    cursor: pointer;
+    border: 0;
+    text-decoration: none;
+  }
+
+  .hero-actions .btn {
+    padding: 12px 18px; /* Reducido */
+    border-radius: 999px;
+    background: var(--brand-red-main);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .hero-actions .btn:hover {
+    transform: translateY(-2px);
+    background: var(--brand-red-accent);
+  }
+
+  .hero-actions .btn-secondary {
+    padding: 12px 16px; /* Reducido */
+    border-radius: 16px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.10);
+    color: #fff;
+  }
+
+  .hero-actions .btn-secondary:hover {
+    transform: translateY(-2px);
+    background: rgba(255,255,255,0.12);
+  }
+
+  /* --- Etiquetas (Tags) --- */
+  .hero-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Reducido */
+  }
+
+  .hero-tags span {
+    padding: 8px 12px; /* Reducido */
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.07);
+    color: rgba(255, 255, 255, 0.82);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    font-size: 0.82rem; /* Reducido */
+  }
+
+  /* --- Tarjeta de Imagen --- */
+  .hero-card {
+    border: 1px solid var(--line-color);
+    border-radius: var(--border-radius-lg);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.24);
+    overflow: hidden;
+    position: relative;
+    min-height: 480px; /* Reducido de 560px */
+    background:
+      linear-gradient(180deg, rgba(0,0,0,0.1), rgba(0,0,0,0.78)),
+      url("https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1400&q=80") center center / cover no-repeat;
+  }
+
+  .hero-card-content {
+    position: absolute;
+    inset: auto 0 0 0;
+    padding: 24px; /* Reducido de 28px */
+    background: linear-gradient(0deg, rgba(0,0,0,0.8), transparent);
+  }
+
+  .hero-card-content .label {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 10px; /* Reducido */
+    border-radius: 999px;
+    background: rgba(220, 38, 38, 0.14);
+    color: #fecaca;
+    border: 1px solid rgba(220, 38, 38, 0.20);
+    font-size: 0.68rem; /* Reducido */
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-bottom: 12px; /* Reducido */
+  }
+
+  .hero-card-content h2 {
+    font-size: 1.8rem; /* Reducido de 2.2rem */
+    line-height: 1.1;
+    text-transform: uppercase;
+    letter-spacing: -0.03em;
+    margin: 0;
+  }
+
+  .hero-card-content p {
+    margin-top: 10px; /* Reducido */
+    color: rgba(255, 255, 255, 0.84);
+    line-height: 1.5; /* Reducido */
+    font-size: 0.95rem;
+    margin-bottom: 0;
+  }
+
+  /* --- Responsive --- */
+  @media (max-width: 1180px) {
+    .hero-container {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 920px) {
+    .hero-copy,
+    .hero-card {
+      min-height: auto;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .hero-copy {
+      padding: 20px;
+    }
+    .hero-copy h1 {
+      font-size: clamp(2rem, 10vw, 3.2rem);
+    }
+    .hero-card {
+        min-height: 280px;
+    }
+  }
+
+
+.hero-copy {
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 30px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.24);
+  padding: 34px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 560px;
+  background: linear-gradient(135deg, rgba(177,18,23,0.12), rgba(255,255,255,0.03));
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(220,38,38,0.12);
+  border: 1px solid rgba(220,38,38,0.24);
+  color: #fecaca;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.hero-copy h1 {
+  line-height: 1.05;
+  text-transform: uppercase;
+  letter-spacing: -0.03em;
+  font-size: clamp(2.8rem, 7vw, 5.6rem);
+  margin-top: 20px;
+  max-width: 760px;
+  color: #ffffff; /* Asegura el color en caso de que tu body no lo tenga */
+}
+
+.hero-copy h1 span {
+  color: #ff3838; /* Acento rojo de la marca */
+  display: block;
+}
+
+.hero-copy p {
+  margin-top: 20px;
+  max-width: 680px;
+  color: rgba(255,255,255,0.78);
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
+/* =========================================
+   BOTONES Y ACCIONES
+   ========================================= */
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.btn, .btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.77rem;
+  transition: 0.25s ease;
+  cursor: pointer;
+  border: 0;
+  text-decoration: none; /* Previene subrayados en enlaces */
+}
+
+.btn {
+  padding: 14px 20px;
+  border-radius: 999px;
+  background: #dc2626;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  background: #ff3838;
+}
+
+.btn-secondary {
+  padding: 14px 18px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.10);
+  color: #fff;
+}
+
+.btn-secondary:hover {
+  transform: translateY(-2px);
+  background: rgba(255,255,255,0.12);
+}
+
+/* =========================================
+   ETIQUETAS (TAGS)
+   ========================================= */
+
+.hero-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.hero-tags span {
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.07);
+  color: rgba(255,255,255,0.82);
+  border: 1px solid rgba(255,255,255,0.07);
+  font-size: 0.9rem;
+}
+
+/* =========================================
+   RESPONSIVE (MÓVILES Y TABLETS)
+   ========================================= */
+
+@media (max-width: 920px) {
+  .hero-copy {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-copy {
+    padding: 22px;
+  }
+  .hero-copy h1 {
+    font-size: clamp(2.2rem, 13vw, 3.6rem); /* Escala dinámica perfecta para celular */
+  }
+}
