@@ -76,7 +76,7 @@
     transform: scale(1.5);
 }
 
-
+/* Color Instagram (Azul) */
 .social-media-button.insta:hover {
     border-color: #2992dc; 
     box-shadow: 0 5px 15px rgba(41, 146, 220, 0.4);
