@@ -57,7 +57,7 @@
     text-decoration: none;
 }
 
-.social-media-button img {
+.social-media-button svg {
     width: 30px;
     height: 30px;
     object-fit: contain;
@@ -71,7 +71,7 @@
     box-shadow: 0 5px 15px rgba(221, 132, 72, 0.3);
 }
 
-.social-media-button:hover img {
+.social-media-button:hover svg {
     filter: grayscale(0%) brightness(100%); 
     transform: scale(1.5);
 }
