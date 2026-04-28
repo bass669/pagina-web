@@ -61,7 +61,6 @@
     width: 30px;
     height: 30px;
     object-fit: contain;
-    filter: grayscale(100%) brightness(200%); 
     transition: all 0.3s;
 }
 
@@ -109,12 +108,5 @@
     box-shadow: 0 5px 15px rgba(145, 70, 255, 0.4);
 }
 
-/* Ajuste para que los iconos de Google se vean bien */
-.social-media-button img {
-    width: 28px; /* Un poco más grandes para mejor visibilidad */
-    height: 28px;
-    object-fit: contain;
-    filter: grayscale(100%) brightness(200%);
-    transition: all 0.3s ease;
-}
+
 
