@@ -758,3 +758,55 @@ section {
 .p-0{
  padding: 5px 0px !important ;
 }
+
+@media (max-width: 920px) {
+    header {
+        overflow-x: hidden; 
+    }
+    
+    .hero-container {
+        display: flex !important;
+        flex-direction: column !important; 
+        width: 100% !important;
+        margin: 0 !important;
+        gap: 20px !important;
+    }
+
+    /* El bloque de texto se adapta al contenido */
+    .hero-copy {
+        width: 100% !important;
+        box-sizing: border-box !important;
+        padding: 24px 15px !important; 
+        min-height: auto !important; 
+    }
+
+    /* A LA TARJETA DE IMAGEN LE DEVOLVEMOS SU ALTURA */
+    .hero-card {
+        width: 100% !important;
+        box-sizing: border-box !important;
+        min-height: 380px !important;
+    }
+
+    .hero-copy h1 {
+        font-size: 2.2rem !important; 
+        word-wrap: break-word !important; 
+        line-height: 1.2 !important;
+    }
+
+    .hero-actions {
+        display: flex !important;
+        flex-direction: column !important; 
+        width: 100% !important;
+        gap: 12px !important;
+    }
+
+    .hero-actions .btn, 
+    .hero-actions .btn-secondary {
+        width: 100% !important; 
+        text-align: center !important;
+    }
+    
+    .hero-tags {
+        justify-content: center !important;
+    }
+}
