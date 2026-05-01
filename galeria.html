@@ -43,43 +43,77 @@
         </div>
     </main>
 
-    <script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
     const contenedor = document.getElementById('contenedor-galeria');
-    
-    // Define un límite máximo no pondrá la página lenta intentar buscar muchas fotos
-    const MAX_FOTOS_ESTIMADAS = 500; 
+    const MAX_FOTOS_ESTIMADAS = 150; 
 
-    for (let numero = 1; numero <= MAX_FOTOS_ESTIMADAS; numero++) {
-        // Creamos un "contenedor fantasma" para mantener el orden estricto (1, 2, 3...)
+    // 1. MEMORIA CACHÉ: Revisamos si ya escaneamos las fotos en esta sesión
+    const fotosGuardadas = sessionStorage.getItem('fotosGaleriaProHW');
+
+    console.log("Revisando la memoria caché de la galería:");
+    console.log(fotosGuardadas);
+
+    // Aseguramos que el contenedor use Flexbox para que el truco del orden funcione
+    contenedor.style.display = 'flex';
+    contenedor.style.flexWrap = 'wrap';
+
+    if (fotosGuardadas) {
+
+        console.log("¡Caché encontrada! Cargando fotos directamente...");
+        const arrayFotos = JSON.parse(fotosGuardadas);
+        arrayFotos.forEach(numero => crearTarjetaHtml(numero));
+    } else {
+        // ESCENARIO B: Primera vez
+        console.log("Caché vacía (null). Iniciando el escaneo de 150 fotos...");
+        
+        let validas = [];
+        let comprobadas = 0;
+
+        for (let numero = 1; numero <= MAX_FOTOS_ESTIMADAS; numero++) {
+            const imgPrueba = new Image();
+
+            imgPrueba.onload = function() {
+                validas.push(numero);
+                crearTarjetaHtml(numero);
+                verificarFin();
+            };
+
+            imgPrueba.onerror = function() {
+                verificarFin();
+            };
+
+            imgPrueba.src = `img/galeria/${numero}.webp`;
+        }
+
+        // Función interna para saber cuándo terminamos de buscar las 150
+        function verificarFin() {
+            comprobadas++;
+            if (comprobadas === MAX_FOTOS_ESTIMADAS) {
+                validas.sort((a, b) => a - b);
+                sessionStorage.setItem('fotosGaleriaProHW', JSON.stringify(validas));
+            }
+        }
+    }
+
+    // 2. FUNCIÓN PARA CREAR LAS TARJETAS (Limpia y optimizada)
+    function crearTarjetaHtml(numero) {
         const divCol = document.createElement('div');
         divCol.className = 'col-lg-4 col-md-6';
-        divCol.style.display = 'none'; // Se mantiene oculto
-        
-        // Lo inyectamos inmediatamente en la página reservando su espacio
+        divCol.style.order = numero; 
+
+        divCol.innerHTML = `
+            <div class="galeria-item">
+                <!-- 3. ATRIBUTOS MÁGICOS: lazy y async -->
+                <!-- Evitan que la página se trabe y que las fotos "salten" al hacer scroll -->
+                <img src="img/galeria/${numero}.webp" alt="Activación Pro Hardware" loading="lazy" decoding="async">
+            </div>
+        `;
         contenedor.appendChild(divCol);
-
-        // Intentamos cargar la foto en memoria (todas se lanzan al mismo tiempo)
-        const imgPrueba = new Image();
-        imgPrueba.src = `img/galeria/${numero}.png`;
-
-        // ¿Qué pasa si la foto SÍ existe y termina de cargar?
-        imgPrueba.onload = function() {
-            // Rellenamos su contenedor fantasma específico y lo hacemos visible
-            divCol.innerHTML = `
-                <div class="galeria-item">
-                    <img src="${this.src}" alt="Evento Pro Hardware">
-                </div>
-            `;
-            divCol.style.display = 'block';
-        };
-
-        // si la foto NO existe
-        imgPrueba.onerror = function() {
-            // Destruimos el contenedor fantasma para no dejar espacios en blanco
-            divCol.remove();
-        };
     }
+});
 </script>
+
 
     <footer class="piePagina" id="contactanos">
         <hr class="divider-footer">
