@@ -42,75 +42,52 @@
                 </div>
         </div>
     </main>
-
 <script>
 document.addEventListener("DOMContentLoaded", () => {
     const contenedor = document.getElementById('contenedor-galeria');
-    const MAX_FOTOS_ESTIMADAS = 150; 
+    const MAX_FOTOS_ESTIMADAS = 50; // Bajamos el límite a 50 por carpeta para no saturar
 
-    // 1. MEMORIA CACHÉ: Revisamos si ya escaneamos las fotos en esta sesión
-    const fotosGuardadas = sessionStorage.getItem('fotosGaleriaProHW');
+    // Define aquí el nombre de las carpetas que quieres mostrar y su título
+    const carpetasEventos = [
+        { ruta: 'expogame', titulo: 'Expogame' },
+        { ruta: 'kamecon', titulo: 'Kamecon' }
+        // Se pueden agregar más carpetas aquí con { ruta: '', titulo: '' } separandolas por coma
+    ];
 
-    console.log("Revisando la memoria caché de la galería:");
-    console.log(fotosGuardadas);
-
-    // Aseguramos que el contenedor use Flexbox para que el truco del orden funcione
     contenedor.style.display = 'flex';
     contenedor.style.flexWrap = 'wrap';
+    contenedor.style.width = '100%';
 
-    if (fotosGuardadas) {
+    carpetasEventos.forEach((evento, indexCarpeta) => {
+        // 1. Creamos el título de la sección
+        const tituloContenedor = document.createElement('div');
+        tituloContenedor.className = 'col-12 mt-5 mb-4';
+        tituloContenedor.style.order = indexCarpeta * 1000; // Orden para asegurar que el título quede arriba
+        tituloContenedor.innerHTML = `<h2 style="color: #e60000; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px;">${evento.titulo}</h2>`;
+        contenedor.appendChild(tituloContenedor);
 
-        console.log("¡Caché encontrada! Cargando fotos directamente...");
-        const arrayFotos = JSON.parse(fotosGuardadas);
-        arrayFotos.forEach(numero => crearTarjetaHtml(numero));
-    } else {
-        // ESCENARIO B: Primera vez
-        console.log("Caché vacía (null). Iniciando el escaneo de 150 fotos...");
-        
-        let validas = [];
-        let comprobadas = 0;
-
+        // 2. Buscamos las fotos de esa carpeta (asumiendo que se llaman 1.webp, 2.webp, etc.)
         for (let numero = 1; numero <= MAX_FOTOS_ESTIMADAS; numero++) {
             const imgPrueba = new Image();
 
             imgPrueba.onload = function() {
-                validas.push(numero);
-                crearTarjetaHtml(numero);
-                verificarFin();
+                const divCol = document.createElement('div');
+                divCol.className = 'col-lg-4 col-md-6';
+                
+                // El orden será: (Index Carpeta * 1000) + número de foto (Ej: Expogame foto 5 = 0005. Matrimonio foto 2 = 1002)
+                divCol.style.order = (indexCarpeta * 1000) + numero; 
+
+                divCol.innerHTML = `
+                    <div class="galeria-item">
+                        <img src="${this.src}" alt="${evento.titulo}" loading="lazy" decoding="async">
+                    </div>
+                `;
+                contenedor.appendChild(divCol);
             };
 
-            imgPrueba.onerror = function() {
-                verificarFin();
-            };
-
-            imgPrueba.src = `img/galeria/${numero}.webp`;
+            imgPrueba.src = `img/galeria/${evento.ruta}/${numero}.webp`;
         }
-
-        // Función interna para saber cuándo terminamos de buscar las 150
-        function verificarFin() {
-            comprobadas++;
-            if (comprobadas === MAX_FOTOS_ESTIMADAS) {
-                validas.sort((a, b) => a - b);
-                sessionStorage.setItem('fotosGaleriaProHW', JSON.stringify(validas));
-            }
-        }
-    }
-
-    // 2. FUNCIÓN PARA CREAR LAS TARJETAS (Limpia y optimizada)
-    function crearTarjetaHtml(numero) {
-        const divCol = document.createElement('div');
-        divCol.className = 'col-lg-4 col-md-6';
-        divCol.style.order = numero; 
-
-        divCol.innerHTML = `
-            <div class="galeria-item">
-                <!-- 3. ATRIBUTOS MÁGICOS: lazy y async -->
-                <!-- Evitan que la página se trabe y que las fotos "salten" al hacer scroll -->
-                <img src="img/galeria/${numero}.webp" alt="Activación Pro Hardware" loading="lazy" decoding="async">
-            </div>
-        `;
-        contenedor.appendChild(divCol);
-    }
+    });
 });
 </script>
 
