@@ -1,17 +1,19 @@
-
-
-@media (min-width: 993px) {
-
+header {
+    /* background: linear-gradient(135deg, #0D0D0D 0%, #2a0000 100%); */
+    background-color: #0D0D0D; 
+    border-bottom: 2px solid #750000;
+    padding:1rem 1rem;
+    text-align: center;
+}
 body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    /* background: linear-gradient(135deg, #2a0000 0%, #000000 50%, #2a0000 100%); */
-    /* background: radial-gradient(circle, #000000 0%, #2a0000 100%); */
-    background-image: url(../img/background/op1.png);
+    background: radial-gradient(circle, #0D0D0D 0%, #2a0000 100%);
+    /* background-image: url(../img/background/op1.png);
     background-size: cover;
     background-position: center;
-    background-repeat: repeat;
+    background-repeat: repeat; */
 }
 h2 {
     padding-top: 20px;
@@ -29,42 +31,19 @@ main h2 {
     /* color: #e60000; */
     margin-top: 30px;
 }
-.buton {
-    margin-left: auto; 
-    margin-right: auto;
-}
-.btn-enviar {
-    width: 100%;
-    background: transparent;
-    border: 2px solid #e60000;
-    color: #FBFBFB;
-    padding: 8px 20px;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: all 0.5s;
-    margin-top: 5px;
-    font-family: "Lato", sans-serif;
-    font-weight: bold;
-    text-transform: uppercase;
-}
 
-.btn-enviar:hover {
-    background: #A30000;
-    color: #FBFBFB;
-    box-shadow: 0 6px 10px #A30000;
-    transform: translateY(-4px);
+.container {
+    padding: 0 0 0 0;
 }
-
 .Contac-form {
-    max-width: 800px;
+    min-width: 350px;
     background-color: #262626; 
-    padding: 40px;
+    padding: 30px;
     border-radius: 15px;
-    border: 1px solid #e60000; 
     color: #FBFBFB;
     box-shadow: 0 0.8px 0.8px rgba(230, 0, 0, 0.15),
-        0 1.5px 1.5px rgba(230, 0, 0, 0.7),
-        0 2.1px 2.1px rgba(230, 0, 0, 0.6),
+        0 1.5px 1.5px rgba(230, 0, 0, 0.692),
+        0 2.1px 2.1px rgba(230, 0, 0, 0.548),
         0 4.4px 4.4px rgba(230, 0, 0, 0.5),
         0 12px 12px rgba(10, 8, 8, 0.781);
 }
@@ -76,9 +55,12 @@ main h2 {
     color: #FBFBFB;
     text-align: center;
     font-family: "Open Sans", sans-serif;
-    font-weight: 500;
+    font-weight: 400;
+    margin-top: 15px;
 }
-
+.form-control::placeholder {
+    color: #FBFBFB;
+}
 .form-control, .form-select {
     background-color: #3B3B3B;
     border: 2px solid #1A1A1A;
@@ -92,12 +74,47 @@ main h2 {
     box-shadow: 0 0 8px #750000;
     color: #ffffff;
 }
-.form-control::placeholder {
+
+.buton {
+    margin-left: auto; 
+    margin-right: auto;
+}
+.btn-enviar {
+    width: auto;
+    background: transparent;
+    border: 2px solid #e60000;
     color: #FBFBFB;
+    border-radius: 15px;
+    padding: 8px 20px;
+    margin-top: 10px;
+    font-family: "Lato", sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+@media (min-width: 993px) {
+
+.Contac-form {
+    max-width: 900px;
+    padding: 40px;
+    border: 1px solid #e60000; 
+}
+.form-label {
+    font-weight: 500;
+    margin-top: 0px;
 }
 
-.piePagina {
-    background-color: #000000a4 !important;
+.btn-enviar {
+    width: 100%;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.btn-enviar:hover {
+    background: #A30000;
+    color: #FBFBFB;
+    box-shadow: 0 6px 10px #A30000;
+    transform: translateY(-4px);
 }
 
 
