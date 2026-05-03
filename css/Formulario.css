@@ -1,74 +1,20 @@
+
+
+@media (min-width: 993px) {
+
 body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     /* background: linear-gradient(135deg, #2a0000 0%, #000000 50%, #2a0000 100%); */
-    background: radial-gradient(circle, #000000 0%, #2a0000 100%);
+    /* background: radial-gradient(circle, #000000 0%, #2a0000 100%); */
+    background-image: url(../img/background/op1.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat;
 }
-
-.btn {
-    padding: 8px 20px;
-    border-radius: 25px;
-    overflow: hidden;
-}
-
-.btn::before {
-    position: absolute;
-    content: "";
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(120deg, transparent, #00fffc,
-            transparent);
-    transform: translateX(-200%);
-    transition: 0.5;
-}
-
-.btn:hover {
-    background: transparent;
-    box-shadow: 0 0 20px 10px rgba(23, 202, 229, 0.5);
-}
-
-.form-input-material {
-    --input-default-border-color: white;
-    --input-border-butoom-color: white;
-}
-
-.form-input-material input {
-    color: rgb(0, 0, 0);
-}
-
-.container {
-    max-width: 900px;
-    backdrop-filter: blur(10px);
-    flex-direction: column;
-    align-items: center;
-    /* padding: 40px 30px; */
-    color: white;
-    /* box-shadow: 0 0.8px 0.8px rgba(255, 255, 255, 0.5),
-        0 1.5px 1.5px rgba(255, 255, 255, 0.5),
-        0 2.1px 2.1px rgba(255, 255, 255, 0.5),
-        0 4.4px 4.4px rgba(255, 255, 255, 0.5),
-        0 12px 12px rgba(10, 8, 8, 0.5);
-    border-radius: 15px; */
-}
-
-.container h3 {
-    margin: 0 0 24px 0;
-    text-align: center;
-}
-
-.container .form-input-material {
-    margin: 12px 35px;
-}
-
-.container .btn {
-    width: 30%;
-    margin: 18px 0 9px 35%;
-}
-
 h2 {
+    padding-top: 20px;
     color: white;
     text-align: center;
     font-family: "Josefin Sans", sans-serif;
@@ -79,7 +25,75 @@ h3{
 label{
     font-family: "Open Sans", sans-serif;
 }
+main h2 {
+    /* color: #e60000; */
+    margin-top: 30px;
+}
+.buton {
+    margin-left: auto; 
+    margin-right: auto;
+}
+.btn-enviar {
+    width: 100%;
+    background: transparent;
+    border: 2px solid #e60000;
+    color: #FBFBFB;
+    padding: 8px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.5s;
+    margin-top: 5px;
+    font-family: "Lato", sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+}
 
-/* .row{
-    justify-content: space-around !important;
-} */
+.btn-enviar:hover {
+    background: #A30000;
+    color: #FBFBFB;
+    box-shadow: 0 6px 10px #A30000;
+    transform: translateY(-4px);
+}
+
+.Contac-form {
+    max-width: 800px;
+    background-color: #262626; 
+    padding: 40px;
+    border-radius: 15px;
+    border: 1px solid #e60000; 
+    color: #FBFBFB;
+    box-shadow: 0 0.8px 0.8px rgba(230, 0, 0, 0.15),
+        0 1.5px 1.5px rgba(230, 0, 0, 0.7),
+        0 2.1px 2.1px rgba(230, 0, 0, 0.6),
+        0 4.4px 4.4px rgba(230, 0, 0, 0.5),
+        0 12px 12px rgba(10, 8, 8, 0.781);
+}
+.Contac-form h3 {
+    color: #FBFBFB;
+    text-align: center;
+}
+.form-label {
+    color: #FBFBFB;
+    text-align: center;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 500;
+}
+
+.form-control, .form-select {
+    background-color: #3B3B3B;
+    border: 2px solid #1A1A1A;
+    color: #FBFBFB;
+    font-family: "Open Sans", sans-serif;
+    transition: all 0.3s ease;
+}
+.form-control:focus, .form-select:focus {
+    background-color: #181818;
+    border-color: #e60000;
+    box-shadow: 0 0 8px #750000;
+    color: #ffffff;
+}
+.form-control::placeholder {
+    color: #FBFBFB;
+}
+
+}
