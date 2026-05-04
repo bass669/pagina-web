@@ -17,6 +17,7 @@ body {
     min-height: 70vh;
 }
 .galeria-item {
+    contain: content;
     margin-bottom: 30px;
     overflow: hidden;
     border-radius: 15px;
@@ -66,10 +67,4 @@ body {
     color: #FBFBFB;
     font-family: "Josefin Sans", sans-serif;
     
-}
-
-@media (min-width: 993px) {
-
-
-
 }
