@@ -19,7 +19,7 @@ a:hover, a:focus {
 
 /* Estilos personalizados para la nueva navbar de Bootstrap */
 .custom-nav-link {
-    color: #ffffff !important;
+    color: #FBFBFB !important;
     text-transform: uppercase;
     font-weight: bold;
     font-size: 1.1rem;
