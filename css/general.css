@@ -810,3 +810,111 @@ section {
         justify-content: center !important;
     }
 }
+
+/* =========================================
+   ESTILOS PARA LOS MODALES DE SERVICIOS
+   ========================================= */
+
+/* Fondo del modal y borde con resplandor neón */
+.modal-content {
+    background-color: #121212 !important; /* Fondo oscuro igual al resto de la web */
+    border: 1px solid #e60000 !important; /* Borde rojo */
+    border-radius: 15px !important;
+    box-shadow: 0 0 25px rgba(230, 0, 0, 0.25) !important; /* Resplandor rojo suave */
+}
+
+/* Cabecera del modal */
+.modal-header {
+    border-bottom: 1px solid rgba(230, 0, 0, 0.2) !important;
+}
+
+.modal-title {
+    color: #e60000 !important;
+    font-family: "Josefin Sans", sans-serif !important;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Botón de cerrar (X) en la esquina superior */
+.btn-close {
+    filter: invert(1) grayscale(100%) brightness(200%) !important; /* Lo fuerza a ser blanco puro */
+    opacity: 0.7;
+    transition: 0.3s ease;
+}
+
+.btn-close:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* Cuerpo del modal (Textos y listas) */
+.modal-body {
+    font-family: "Open Sans", sans-serif !important;
+    color: #cccccc !important;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.modal-body strong {
+    color: #ffffff !important;
+}
+
+.modal-body ul {
+    margin-top: 12px;
+    padding-left: 20px;
+}
+
+.modal-body ul li {
+    margin-bottom: 8px;
+    color: #aaaaaa;
+}
+
+/* Pie del modal (Línea separadora) */
+.modal-footer {
+    border-top: 1px solid rgba(230, 0, 0, 0.2) !important;
+}
+
+/* Botón "Cerrar" */
+.modal-footer .btn-secondary {
+    background-color: transparent !important;
+    border: 1px solid #555 !important;
+    color: #aaaaaa !important;
+    font-family: "Lato", sans-serif !important;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.modal-footer .btn-secondary:hover {
+    background-color: #333333 !important;
+    color: #ffffff !important;
+    border-color: #777 !important;
+}
+
+/* Botón "Cotizar Ahora" */
+.modal-footer .btn-primary {
+    background-color: #e60000 !important;
+    border: 1px solid #e60000 !important;
+    color: #ffffff !important;
+    font-family: "Lato", sans-serif !important;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 5px;
+    box-shadow: 0 4px 15px rgba(230, 0, 0, 0.4) !important;
+    transition: all 0.3s ease;
+}
+
+.modal-footer .btn-primary:hover {
+    background-color: transparent !important;
+    color: #e60000 !important;
+    transform: translateY(-2px); /* Pequeño salto al pasar el mouse */
+}
+
+/* Efecto opcional: Fondo oscuro desenfocado detrás del modal */
+.modal-backdrop.show {
+    opacity: 0.85 !important;
+    backdrop-filter: blur(5px);
+    background-color: #000000 !important;
+}
