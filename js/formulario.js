@@ -10,7 +10,7 @@
         btn.innerText = 'Enviando...';
         btn.disabled = true; // Evita múltiples envíos
 
-        emailjs.sendForm('service_lf9j5mr', 'template_2stcwyb', this)
+        emailjs.sendForm('service_4yw70sc', 'template_2stcwyb', this)
             .then(function() {
                 // VENTANA EMERGENTE DE ÉXITO
                 Swal.fire({
@@ -32,7 +32,7 @@
                 // VENTANA DE ERROR
                 Swal.fire({
                     title: 'Error',
-                    text: 'Hubo un problema al enviar: ' + JSON.stringify(error),
+                    text: 'Hubo un problema al enviar',
                     icon: 'error',
                     background: '#1a1a1a',
                     color: '#fff',
