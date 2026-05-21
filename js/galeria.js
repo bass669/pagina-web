@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     const contenedor = document.getElementById('contenedor-galeria');
     const filterMenu = document.getElementById('filter-menu');
-    const API_URL = 'https://script.google.com/macros/s/AKfycbz7lLFqD-t_e_CnGRPZ_s8cyYtYrSNqNTejpOn9Osa2tvuINIeO_cQLCx8E5gjp-xxT/exec';
+    const API_URL = 'https://script.google.com/macros/s/AKfycbzLZe-_wFEjJxgHSxgfwaG_YkyhgOnh_ppvkLL8Q0LJxkZtmvSltc4vux3GPgGiCh8-/exec';
 
     // Función para renderizar los datos
     const renderGallery = (data) => {
